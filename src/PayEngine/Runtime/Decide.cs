@@ -34,6 +34,7 @@ internal static class MethodMatcher
         if (!currency.Equals(method.Currency, StringComparison.Ordinal)) { rejection = PayResults.Declined("Method.Rejected", plan.Code + " / " + plan.DisplayName + " rejected the currency."); return false; }
         if (method.MinAmount > 0m && request.Sum < method.MinAmount) { rejection = PayResults.Declined("Method.Rejected", plan.Code + " / " + plan.DisplayName + " rejected the sum."); return false; }
         if (method.MaxAmount > 0m && request.Sum > method.MaxAmount) { rejection = PayResults.Declined("Method.Rejected", plan.Code + " / " + plan.DisplayName + " rejected the sum."); return false; }
+        if (method.AmountStep > 0m && request.Sum % method.AmountStep != 0m) { rejection = PayResults.Declined("Method.Rejected", plan.Code + " / " + plan.DisplayName + " rejected the sum step."); return false; }
         rejection = null!; return true;
     }
     private static bool TryFirm(ProviderPlan plan, string requested, out string firm)

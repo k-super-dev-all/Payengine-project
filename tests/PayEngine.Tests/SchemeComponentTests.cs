@@ -9,6 +9,8 @@ namespace PayEngine.Tests;
 
 public sealed class SchemeComponentTests
 {
+    private const string StepCard = "P2P_PAYIN_CARD_RUB_RUS_STEP_RUB_RUS_STEP";
+
     private static readonly DateTimeOffset Moment = new(2026, 1, 15, 10, 0, 0, TimeSpan.Zero);
 
     private static readonly IReadOnlyDictionary<string, string> Settings = new Dictionary<string, string>(StringComparer.Ordinal)
@@ -126,6 +128,58 @@ public sealed class SchemeComponentTests
 
         result.Kind.Should().BeOneOf(PayResultKind.Declined, PayResultKind.Error);
         outbound.Calls.Should().BeEmpty();
+    }
+
+    [Theory]
+    [InlineData(1525)]
+    [InlineData(1500.50)]
+    public async Task Amount_off_the_step_does_not_call_http(double sum)
+    {
+        var outbound = new QueueOutbound();
+        var session = OpenScheme(outbound);
+        var request = Payloads.Request("att-step", StepCard, (decimal)sum, "https://callback.test/payin", "firm-a");
+
+        var result = await SessionCheck.Payin(session, "Scheme").ExecuteAsync(request, CancellationToken.None);
+
+        result.Kind.Should().Be(PayResultKind.Declined);
+        result.Code.Should().Be("Method.Rejected");
+        outbound.Calls.Should().BeEmpty();
+    }
+
+    [Fact]
+    public async Task Amount_on_the_step_is_sent()
+    {
+        var outbound = new QueueOutbound();
+        outbound.Enqueue(200, """{"id":"pay-step","card":"token-card-2"}""");
+        var session = OpenScheme(outbound);
+        var request = Payloads.Request("att-step-ok", StepCard, 1550m, "https://callback.test/payin", "firm-a");
+
+        var result = await SessionCheck.Payin(session, "Scheme").ExecuteAsync(request, CancellationToken.None);
+
+        result.Kind.Should().Be(PayResultKind.Accepted);
+        OnlyCall(outbound).Body.Should().Contain("1550");
+    }
+
+    [Fact]
+    public void Negative_amount_step_is_a_problem()
+    {
+        var source = Path.Combine(Repo.Root(), "tests", "fixtures", "scheme.json");
+        var root = JsonNode.Parse(File.ReadAllText(source)) as JsonObject
+            ?? throw new InvalidDataException("scheme.json is not an object.");
+        var method = root["Providers"]?["Scheme"]?["PaymentMethods"]?[StepCard] as JsonObject
+            ?? throw new InvalidDataException("scheme.json has no step method.");
+        method["AmountStep"] = JsonValue.Create(-1);
+        var temp = Directory.CreateTempSubdirectory("payengine-scheme-");
+        try
+        {
+            File.WriteAllText(Path.Combine(temp.FullName, "scheme.json"), root.ToJsonString());
+            var session = EngineHost.Open(temp.FullName, Settings, new QueueOutbound(), new FixedClock(Moment));
+            SessionCheck.HasAny(session.Problems).Should().BeTrue();
+        }
+        finally
+        {
+            temp.Delete(recursive: true);
+        }
     }
 
     [Theory]

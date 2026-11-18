@@ -21,7 +21,7 @@ internal static class Words
     internal static readonly HashSet<string> CallbackKeys = Set("Format, AttemptId, ProviderPaymentId, Status, StatusMap, Amount, AmountUnit");
     internal static readonly HashSet<string> SigningKeys = Set("Request, PayinCallback, PayoutCallback");
     internal static readonly HashSet<string> SignKeys = Set("Algorithm, Base, Encoding, Key, Header, BodyField, Required");
-    internal static readonly HashSet<string> MethodKeys = Set("ProviderMethod, Currency, DetailsType, Account, MinAmount, MaxAmount");
+    internal static readonly HashSet<string> MethodKeys = Set("ProviderMethod, Currency, DetailsType, Account, MinAmount, MaxAmount, AmountStep");
     internal static readonly HashSet<string> CapabilityNames = Set("PayinExecute, PayinCallback, PayoutExecute, PayoutCallback");
     internal static readonly HashSet<string> DetailTypes = Set("Card, Phone, BankAccount, Qr");
     internal static readonly Dictionary<string, AuthKind> AuthKinds = new(StringComparer.Ordinal) { ["None"] = AuthKind.None, ["Bearer"] = AuthKind.Bearer, ["Header"] = AuthKind.Header };

@@ -1,0 +1,1012 @@
+{
+  "section": "PaySnapper",
+  "cases": [
+    {
+      "name": "payin accepted 836",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Create response from the docs: status 1 in progress, result code 0.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-836",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_BEN_MOOV_XOF_BEN_MOOV",
+        "Sum": 1500,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "2290100000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-836",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 1,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Accepted",
+        "code": "",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"2290100000000\",\"order_id\":\"att-836\",\"amount\":\"1500.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":836,\"signature\":\"3ff3d66fd0b3f9987238c1a2974a4aacedc621c186cd5b6a89615eaf96998dde483dfe5b53454001fbe4a8f747fc04a021aad3805568ae6a17dd9a957821a429\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin accepted 835",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Create response from the docs: status 1 in progress, result code 0.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-835",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_BEN_MTN_XOF_BEN_MTN",
+        "Sum": 1500,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "2290100000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-835",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 1,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Accepted",
+        "code": "",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"2290100000000\",\"order_id\":\"att-835\",\"amount\":\"1500.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":835,\"signature\":\"2c4d5070cc458457b2d50ee4815bf93a20bf1d9110acf85106628476967090205e9e6a144051ee4655cfa4450a2fc722b3000f6ec57f221dfd467be79afb996a\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin accepted 10007",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Create response from the docs: status 1 in progress, result code 0.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-10007",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_BEN_CELTIIS_XOF_BEN_CELTIIS",
+        "Sum": 2000,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "2290100000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-10007",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 1,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Accepted",
+        "code": "",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"2290100000000\",\"order_id\":\"att-10007\",\"amount\":\"2000.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":10007,\"signature\":\"b82cb59599e2da1c5a5f9052086b5d10af243fcf770cdf48cd3707a46ce362568b2b770144c072f246858a6e5307cccc736af5cb534f5c4932b270b60ee24335\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin accepted 9564",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Create response from the docs: status 1 in progress, result code 0.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-9564",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_NER_AIRTEL_XOF_NER_AIRTEL",
+        "Sum": 5000,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "22700000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-9564",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 1,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Accepted",
+        "code": "",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"22700000000\",\"order_id\":\"att-9564\",\"amount\":\"5000.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":9564,\"signature\":\"18825ba3e6259b2f926658bc2bf8498e947ae4ba7025d8ad5960ba9cf45847c069e9f06f40388dad1da41fb2d0c38090c8132d9b87196fbaa92ba1b80eec17cd\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin accepted 9562",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Create response from the docs: status 1 in progress, result code 0.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-9562",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_NER_AMANA_XOF_NER_AMANA",
+        "Sum": 5000,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "22700000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-9562",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 1,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Accepted",
+        "code": "",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"22700000000\",\"order_id\":\"att-9562\",\"amount\":\"5000.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":9562,\"signature\":\"9c1666650cae97d589919cf7e04ef650015323d7aa9b8edaaa9da748dade1179c516d99fb3bddd0b244198a835d585d31955f119e74f0401e894b5e5accc1dc4\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin accepted 9563",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Create response from the docs: status 1 in progress, result code 0.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-9563",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_NER_ZAMANI_XOF_NER_ZAMANI",
+        "Sum": 5000,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "22700000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-9563",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 1,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Accepted",
+        "code": "",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"22700000000\",\"order_id\":\"att-9563\",\"amount\":\"5000.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":9563,\"signature\":\"de20cdf44723cbcfb00bf741fad69de410334181e8d7d27da717110805b9cd8c6818b35854c4cdf1df7e9c68265e28c963153c943e81c810bd23a28a52bf466c\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin accepted 292",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Create response from the docs: status 1 in progress, result code 0.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-292",
+        "MethodCode": "P2P_PAYIN_PHONE_KES_KEN_MPESASAFARICOM_KES_KEN_MPESASAFARICOM",
+        "Sum": 100,
+        "Currency": "KES",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "254000000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-292",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 1,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Accepted",
+        "code": "",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"254000000000\",\"order_id\":\"att-292\",\"amount\":\"100.00\",\"currency\":\"KES\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":292,\"signature\":\"fc3f385a526fc655970b5c3d9583dcb42ec57aafdb2f00df687d95cb9d60866ed8e4d2a1a9ef5e0d460e052659af9e96a4d9f4a45f2e774d0d671ad21ee5fe29\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin accepted 293",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Create response from the docs: status 1 in progress, result code 0.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-293",
+        "MethodCode": "P2P_PAYIN_PHONE_KES_KEN_AIRTEL_KES_KEN_AIRTEL",
+        "Sum": 100,
+        "Currency": "KES",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "254000000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-293",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 1,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Accepted",
+        "code": "",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"254000000000\",\"order_id\":\"att-293\",\"amount\":\"100.00\",\"currency\":\"KES\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":293,\"signature\":\"965a67ea026cf9e744302ff4a69a5d05196326346574ff5a93509be0164d8a517917fdf58b52f0643fa8bd8145a8981c2a3f861750b1727d9064b0196f06d1f0\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin failed status",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Status 3 in the create reply declines the payment.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-fail",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_BEN_MTN_XOF_BEN_MTN",
+        "Sum": 1500,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "2290100000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-fail",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": 3,
+            "result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "provider_result": {
+              "code": 0,
+              "message": "OK"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Declined",
+        "code": "Api.Failed",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"2290100000000\",\"order_id\":\"att-fail\",\"amount\":\"1500.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":835,\"signature\":\"15e8f13336a10e995868c82434463f8dc986080b1350f6a88ca4f3eb61d8c618ddd5cfe2564530a54c203f714d789e451c568e081c34f91e715d7f697bacfd46\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin refused by result code",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Non-zero result code (no code list in the docs) declines the payment.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-refused",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_BEN_MTN_XOF_BEN_MTN",
+        "Sum": 1500,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "2290100000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 200,
+          "body": {
+            "order_id": "att-refused",
+            "transaction_id": "732007046722",
+            "transaction_ref": "MP.33234.342.CP33",
+            "status": -1,
+            "result": {
+              "code": 1,
+              "message": "Refused"
+            },
+            "provider_result": {
+              "code": 1,
+              "message": "Refused"
+            },
+            "service_id": 1,
+            "service_version": 11.1,
+            "service_date_time": "2020-11-25 10:08:32.832969"
+          },
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Declined",
+        "code": "Api.Refused",
+        "providerPaymentId": "732007046722",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"2290100000000\",\"order_id\":\"att-refused\",\"amount\":\"1500.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":835,\"signature\":\"555542c0f1f9b769b64399da7a7aeb97086b5b8be83e2d3f915e05a96e6f9ab92715d2c521117f2b0479e6851319b2dffff0c18618d53ce27f202821b13d5ba9\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin http error",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "A non-2xx reply is an error, no outcome rule matches.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-500",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_BEN_MTN_XOF_BEN_MTN",
+        "Sum": 1500,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "2290100000000",
+        "Firm": "firm-a"
+      },
+      "replies": [
+        {
+          "status": 500,
+          "body": "",
+          "path": "PUBLIC_ID/payment_c2b",
+          "httpMethod": "POST",
+          "contentType": "application/json"
+        }
+      ],
+      "expected": {
+        "kind": "Error",
+        "code": "Api.NoActionInResponse",
+        "providerPaymentId": "",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": [
+          {
+            "method": "POST",
+            "url": "https://api.paysnapper.xyz/PUBLIC_ID/payment_c2b",
+            "contentType": "application/json",
+            "body": "{\"merchant_id\":\"test-key\",\"customer_id\":\"2290100000000\",\"order_id\":\"att-500\",\"amount\":\"1500.00\",\"currency\":\"XOF\",\"callback_url\":\"https://callback.test/payin\",\"provider_id\":835,\"signature\":\"753bbfc0c7f88f0d46e6e4b362f05d1792137087f97b15ca2a703d5fb4f6d204b139ed3046c23324f890179d083389c693c7c7dfff75ea3ea761148501d39001\"}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "payin sum off the step",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "1502 XOF is not a multiple of 5: declined before any call.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-step",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_BEN_MTN_XOF_BEN_MTN",
+        "Sum": 1502,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "2290100000000",
+        "Firm": "firm-a"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "Declined",
+        "code": "Method.Rejected",
+        "providerPaymentId": "",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin sum below minimum",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "100 XOF is below the 200 minimum of 835: declined before any call.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-min",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_BEN_MTN_XOF_BEN_MTN",
+        "Sum": 100,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "2290100000000",
+        "Firm": "firm-a"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "Declined",
+        "code": "Method.Rejected",
+        "providerPaymentId": "",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin sum above maximum",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "600000 XOF is above the 500000 maximum of 9564: declined before any call.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-max",
+        "MethodCode": "P2P_PAYIN_PHONE_XOF_NER_AIRTEL_XOF_NER_AIRTEL",
+        "Sum": 600000,
+        "Currency": "XOF",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "22700000000",
+        "Firm": "firm-a"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "Declined",
+        "code": "Method.Rejected",
+        "providerPaymentId": "",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin kes fractional sum",
+      "kind": "payin",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "KES sums must be whole: the amount is sent as {sum}.00.",
+      "settings": {},
+      "request": {
+        "AttemptId": "att-kes",
+        "MethodCode": "P2P_PAYIN_PHONE_KES_KEN_MPESASAFARICOM_KES_KEN_MPESASAFARICOM",
+        "Sum": 100.5,
+        "Currency": "KES",
+        "CallbackUrl": "https://callback.test/payin",
+        "ClientPhone": "254000000000",
+        "Firm": "firm-a"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "Declined",
+        "code": "Method.Rejected",
+        "providerPaymentId": "",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "",
+        "attemptId": "",
+        "rawStatus": "",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin callback status -1 undefined",
+      "kind": "payin-callback",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Callback is read without a signature check; status -1 (undefined).",
+      "settings": {},
+      "callback": {
+        "body": "{\"merchant_id\":\"merchant\",\"operation_type\":17,\"customer_id\":\"2290100000000\",\"amount\":100,\"init_amount\":100,\"order_id\":\"att-cb\",\"transaction_id\":\"1234567\",\"transaction_ref\":\"QR555RQ\",\"status\":-1,\"provider_id\":835,\"destination_id\":\"\",\"result\":{\"code\":0,\"message\":\"OK\"},\"provider_result\":{\"code\":0,\"message\":\"OK\"},\"service_id\":1,\"service_version\":\"1.03/1.0\",\"service_date_time\":\"2020-11-25 10:08:32.832969\",\"signature\":\"00\"}",
+        "contentType": "application/json",
+        "headers": {},
+        "query": {},
+        "path": "/callback"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "",
+        "code": "",
+        "providerPaymentId": "1234567",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "Unknown",
+        "attemptId": "att-cb",
+        "amount": 100,
+        "rawStatus": "-1",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin callback status 0 initiated",
+      "kind": "payin-callback",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Callback is read without a signature check; status 0 (initiated).",
+      "settings": {},
+      "callback": {
+        "body": "{\"merchant_id\":\"merchant\",\"operation_type\":17,\"customer_id\":\"2290100000000\",\"amount\":100,\"init_amount\":100,\"order_id\":\"att-cb\",\"transaction_id\":\"1234567\",\"transaction_ref\":\"QR555RQ\",\"status\":0,\"provider_id\":835,\"destination_id\":\"\",\"result\":{\"code\":0,\"message\":\"OK\"},\"provider_result\":{\"code\":0,\"message\":\"OK\"},\"service_id\":1,\"service_version\":\"1.03/1.0\",\"service_date_time\":\"2020-11-25 10:08:32.832969\",\"signature\":\"00\"}",
+        "contentType": "application/json",
+        "headers": {},
+        "query": {},
+        "path": "/callback"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "",
+        "code": "",
+        "providerPaymentId": "1234567",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "NoAction",
+        "attemptId": "att-cb",
+        "amount": 100,
+        "rawStatus": "0",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin callback status 1 in progress",
+      "kind": "payin-callback",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Callback is read without a signature check; status 1 (in progress).",
+      "settings": {},
+      "callback": {
+        "body": "{\"merchant_id\":\"merchant\",\"operation_type\":17,\"customer_id\":\"2290100000000\",\"amount\":100,\"init_amount\":100,\"order_id\":\"att-cb\",\"transaction_id\":\"1234567\",\"transaction_ref\":\"QR555RQ\",\"status\":1,\"provider_id\":835,\"destination_id\":\"\",\"result\":{\"code\":0,\"message\":\"OK\"},\"provider_result\":{\"code\":0,\"message\":\"OK\"},\"service_id\":1,\"service_version\":\"1.03/1.0\",\"service_date_time\":\"2020-11-25 10:08:32.832969\",\"signature\":\"00\"}",
+        "contentType": "application/json",
+        "headers": {},
+        "query": {},
+        "path": "/callback"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "",
+        "code": "",
+        "providerPaymentId": "1234567",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "NoAction",
+        "attemptId": "att-cb",
+        "amount": 100,
+        "rawStatus": "1",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin callback status 2 success",
+      "kind": "payin-callback",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Callback is read without a signature check; status 2 (success).",
+      "settings": {},
+      "callback": {
+        "body": "{\"merchant_id\":\"merchant\",\"operation_type\":17,\"customer_id\":\"2290100000000\",\"amount\":100,\"init_amount\":100,\"order_id\":\"att-cb\",\"transaction_id\":\"1234567\",\"transaction_ref\":\"QR555RQ\",\"status\":2,\"provider_id\":835,\"destination_id\":\"\",\"result\":{\"code\":0,\"message\":\"OK\"},\"provider_result\":{\"code\":0,\"message\":\"OK\"},\"service_id\":1,\"service_version\":\"1.03/1.0\",\"service_date_time\":\"2020-11-25 10:08:32.832969\",\"signature\":\"00\"}",
+        "contentType": "application/json",
+        "headers": {},
+        "query": {},
+        "path": "/callback"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "",
+        "code": "",
+        "providerPaymentId": "1234567",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "PaymentSucceeded",
+        "attemptId": "att-cb",
+        "amount": 100,
+        "rawStatus": "2",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin callback status 3 failed",
+      "kind": "payin-callback",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Callback is read without a signature check; status 3 (failed).",
+      "settings": {},
+      "callback": {
+        "body": "{\"merchant_id\":\"merchant\",\"operation_type\":17,\"customer_id\":\"2290100000000\",\"amount\":100,\"init_amount\":100,\"order_id\":\"att-cb\",\"transaction_id\":\"1234567\",\"transaction_ref\":\"QR555RQ\",\"status\":3,\"provider_id\":835,\"destination_id\":\"\",\"result\":{\"code\":0,\"message\":\"OK\"},\"provider_result\":{\"code\":0,\"message\":\"OK\"},\"service_id\":1,\"service_version\":\"1.03/1.0\",\"service_date_time\":\"2020-11-25 10:08:32.832969\",\"signature\":\"00\"}",
+        "contentType": "application/json",
+        "headers": {},
+        "query": {},
+        "path": "/callback"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "",
+        "code": "",
+        "providerPaymentId": "1234567",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "PaymentFailed",
+        "attemptId": "att-cb",
+        "amount": 100,
+        "rawStatus": "3",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin callback status 4 cancelled",
+      "kind": "payin-callback",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Callback is read without a signature check; status 4 (cancelled).",
+      "settings": {},
+      "callback": {
+        "body": "{\"merchant_id\":\"merchant\",\"operation_type\":17,\"customer_id\":\"2290100000000\",\"amount\":100,\"init_amount\":100,\"order_id\":\"att-cb\",\"transaction_id\":\"1234567\",\"transaction_ref\":\"QR555RQ\",\"status\":4,\"provider_id\":835,\"destination_id\":\"\",\"result\":{\"code\":0,\"message\":\"OK\"},\"provider_result\":{\"code\":0,\"message\":\"OK\"},\"service_id\":1,\"service_version\":\"1.03/1.0\",\"service_date_time\":\"2020-11-25 10:08:32.832969\",\"signature\":\"00\"}",
+        "contentType": "application/json",
+        "headers": {},
+        "query": {},
+        "path": "/callback"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "",
+        "code": "",
+        "providerPaymentId": "1234567",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "PaymentFailed",
+        "attemptId": "att-cb",
+        "amount": 100,
+        "rawStatus": "4",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin callback status 5 cancelled partially",
+      "kind": "payin-callback",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Callback is read without a signature check; status 5 (cancelled partially).",
+      "settings": {},
+      "callback": {
+        "body": "{\"merchant_id\":\"merchant\",\"operation_type\":17,\"customer_id\":\"2290100000000\",\"amount\":100,\"init_amount\":100,\"order_id\":\"att-cb\",\"transaction_id\":\"1234567\",\"transaction_ref\":\"QR555RQ\",\"status\":5,\"provider_id\":835,\"destination_id\":\"\",\"result\":{\"code\":0,\"message\":\"OK\"},\"provider_result\":{\"code\":0,\"message\":\"OK\"},\"service_id\":1,\"service_version\":\"1.03/1.0\",\"service_date_time\":\"2020-11-25 10:08:32.832969\",\"signature\":\"00\"}",
+        "contentType": "application/json",
+        "headers": {},
+        "query": {},
+        "path": "/callback"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "",
+        "code": "",
+        "providerPaymentId": "1234567",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "Unknown",
+        "attemptId": "att-cb",
+        "amount": 100,
+        "rawStatus": "5",
+        "calls": []
+      }
+    },
+    {
+      "name": "payin callback status 6 in transit",
+      "kind": "payin-callback",
+      "firm": "firm-a",
+      "clock": "2026-01-15T10:00:00Z",
+      "note": "Callback is read without a signature check; status 6 (in transit).",
+      "settings": {},
+      "callback": {
+        "body": "{\"merchant_id\":\"merchant\",\"operation_type\":17,\"customer_id\":\"2290100000000\",\"amount\":100,\"init_amount\":100,\"order_id\":\"att-cb\",\"transaction_id\":\"1234567\",\"transaction_ref\":\"QR555RQ\",\"status\":6,\"provider_id\":835,\"destination_id\":\"\",\"result\":{\"code\":0,\"message\":\"OK\"},\"provider_result\":{\"code\":0,\"message\":\"OK\"},\"service_id\":1,\"service_version\":\"1.03/1.0\",\"service_date_time\":\"2020-11-25 10:08:32.832969\",\"signature\":\"00\"}",
+        "contentType": "application/json",
+        "headers": {},
+        "query": {},
+        "path": "/callback"
+      },
+      "replies": [],
+      "expected": {
+        "kind": "",
+        "code": "",
+        "providerPaymentId": "1234567",
+        "requisiteType": "",
+        "requisiteValue": "",
+        "redirect": "",
+        "callbackStatus": "Unknown",
+        "attemptId": "att-cb",
+        "amount": 100,
+        "rawStatus": "6",
+        "calls": []
+      }
+    }
+  ]
+}

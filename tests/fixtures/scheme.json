@@ -190,6 +190,15 @@
           "MinAmount": 100,
           "MaxAmount": 100000
         },
+        "P2P_PAYIN_CARD_RUB_RUS_STEP_RUB_RUS_STEP": {
+          "ProviderMethod": "card",
+          "Currency": "RUB",
+          "DetailsType": "Card",
+          "Account": "main",
+          "MinAmount": 100,
+          "MaxAmount": 100000,
+          "AmountStep": 50
+        },
         "P2P_PAYIN_QR_RUB_RUS_ANY_RUB_RUS_ANY": {
           "ProviderMethod": "qr",
           "Currency": "RUB",

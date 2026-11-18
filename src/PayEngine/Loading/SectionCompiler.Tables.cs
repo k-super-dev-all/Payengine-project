@@ -168,6 +168,7 @@ internal static partial class SectionCompiler
         var currency = JsonLocal.Required(obj, "Currency", path, problems); var details = JsonLocal.Required(obj, "DetailsType", path, problems);
         if (details.Length > 0 && !Words.DetailTypes.Contains(details)) { problems.Add(path + ":DetailsType: closed list rejected '" + details + "'."); }
         var account = JsonLocal.Optional(obj, "Account", path, problems); var min = ReadBound(obj, "MinAmount", path, problems); var max = ReadBound(obj, "MaxAmount", path, problems);
+        var step = ReadBound(obj, "AmountStep", path, problems);
         if (min > 0m && max > 0m && min > max) { problems.Add(path + ":MinAmount: minimum is above maximum."); }
         return new MethodSpec
         {
@@ -178,6 +179,7 @@ internal static partial class SectionCompiler
             Account = account,
             MinAmount = min,
             MaxAmount = max,
+            AmountStep = step,
             SourcePath = path,
         };
     }
